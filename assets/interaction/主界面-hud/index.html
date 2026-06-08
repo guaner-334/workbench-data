@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>主界面 HUD · 交互稿（Issue #4）</title>
+<style>
+  body { margin:0; background:#1a1f2b; color:#e8e2d0; font-family:"Microsoft YaHei",sans-serif; }
+  .screen { position:relative; width:960px; height:540px; margin:24px auto; background:#2a3142; border:2px solid #6b5b3e; box-shadow:0 0 0 4px #1a1f2b inset; }
+  .tag { position:absolute; font-size:12px; color:#9aa3b2; }
+  .box { position:absolute; border:1px dashed #b9904a; border-radius:6px; background:rgba(185,144,74,.08); display:flex; align-items:center; justify-content:center; font-size:13px; color:#d8c9a0; }
+  .bar { position:absolute; height:16px; border:1px solid #b9904a; border-radius:8px; }
+  .hp { left:20px; top:20px; width:240px; background:linear-gradient(90deg,#c0392b 70%,#3a3030 70%); }
+  .ether { left:20px; top:42px; width:240px; background:linear-gradient(90deg,#3a86b9 55%,#30353a 55%); }
+  .combo { left:20px; top:70px; font-size:22px; font-weight:800; color:#f3c14b; }
+  .minimap { right:20px; top:20px; width:140px; height:140px; }
+  .skills { left:50%; transform:translateX(-50%); bottom:20px; width:360px; height:64px; }
+  .skill { width:56px; height:56px; }
+  .skillrow { left:50%; transform:translateX(-50%); bottom:24px; display:flex; gap:8px; }
+</style>
+</head>
+<body>
+  <div class="screen">
+    <span class="tag" style="left:20px;top:4px;">血条 HP</span>
+    <div class="bar hp"></div>
+    <span class="tag" style="left:20px;top:60px;">以太槽 Ether（战斗资源）</span>
+    <div class="bar ether"></div>
+    <div class="combo">x12 <span style="font-size:12px;color:#9aa3b2;">连击 Combo</span></div>
+
+    <span class="tag" style="right:20px;top:4px;">小地图 Minimap</span>
+    <div class="box minimap">小地图 / 矿脉位置</div>
+
+    <div class="skillrow">
+      <div class="box skill">普攻</div>
+      <div class="box skill">技能1<br>-20</div>
+      <div class="box skill">技能2<br>-35</div>
+      <div class="box skill">闪避<br>-8</div>
+    </div>
+    <span class="tag" style="left:50%;transform:translateX(-50%);bottom:4px;">技能栏（显示以太消耗，不足则灰显）</span>
+  </div>
+  <p style="text-align:center;color:#9aa3b2;font-size:13px;">交互稿 · 主界面 HUD（Issue #4）｜来源：documents/published/以太-能源系统.md + 战斗系统(#3)</p>
+</body>
+</html>
