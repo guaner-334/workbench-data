@@ -1,0 +1,39 @@
+# 工作台自定义角色权限表
+#
+# 双层权限模型：
+#   - GitHub 原生权限：管「谁能进 repo / 谁能合并 PR」（靠 .github/CODEOWNERS + branch protection 强制）
+#   - 本表：管「进来之后谁能动哪个目录、能做什么」（由 skill 在执行前校验）
+#
+# action 含义：
+#   read    可读
+#   write   可新增 / 修改（含软删除：移动到 .trash/）
+#   approve 可作为 PR 审核人，批准文档定稿 / 资源入正式库
+#   delete  可硬删除（清理 .trash/）
+
+roles:
+  planner:        # 策划
+    documents: [read, write]
+    knowledge: [read, write]
+    standards: [read]
+    assets:    [read]
+  artist:         # 美术
+    assets:    [read, write]
+    knowledge: [read]
+    standards: [read]
+    documents: [read]
+  reviewer:       # 审核
+    documents: [read, approve]
+    assets:    [read, approve]
+    knowledge: [read]
+    standards: [read]
+  admin:          # 管理员
+    "*":       [read, write, approve, delete]
+
+users:
+  - github: guaner-334
+    roles: [admin]
+  # 示例（按需替换为真实 GitHub 账号）：
+  # - github: alice
+  #   roles: [planner]
+  # - github: bob
+  #   roles: [artist, reviewer]

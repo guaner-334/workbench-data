@@ -1,0 +1,12 @@
+# CODEOWNERS —— 对应 permissions.yaml 里的 reviewer / admin 角色
+#
+# 配合 branch protection 的「Require review from Code Owners」即可强制：
+# 没有指定审核人批准，正式库 / 资源 / 规范的 PR 不能合并。
+#
+# 注意：PR 作者本人不能充当自己 PR 的 Code Owner 审核人。
+# 单人演示时若想自己合并，请不要对 main 开启强制 Code Owner review。
+
+/documents/published/   @guaner-334
+/assets/                @guaner-334
+/standards/             @guaner-334
+/permissions.yaml       @guaner-334

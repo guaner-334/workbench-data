@@ -1,0 +1,50 @@
+name: 交互稿需求
+description: 提一个交互稿 / 原型需求
+title: "[交互稿] "
+labels: ["交互稿", "待处理"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 交互稿需求登记
+        交互稿通常基于已定稿的策划案。先有文档，再做交互。
+  - type: textarea
+    id: refs
+    attributes:
+      label: 参考文档
+      description: 基于哪份策划案 / 正式文档？（填 documents/published/ 路径或 Issue 号）
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 页面 / 功能范围
+      description: 要做哪些界面或交互流程？
+    validations:
+      required: true
+  - type: textarea
+    id: style
+    attributes:
+      label: 风格 / 文生图要求
+      description: 视觉风格、参考图；是否需要先出线稿再确认
+  - type: dropdown
+    id: output
+    attributes:
+      label: 期望产出
+      options:
+        - 仅线稿
+        - 线稿 + 图片
+        - 线稿 + HTML
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级
+      options:
+        - P0 紧急
+        - P1 高
+        - P2 中
+        - P3 低
+    validations:
+      required: true

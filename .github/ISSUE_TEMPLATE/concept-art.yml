@@ -1,0 +1,43 @@
+name: 原画需求
+description: 提一个原画 / 概念美术需求
+title: "[原画] "
+labels: ["原画", "待处理"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 原画需求登记
+        立项 skill 会结合美术设定反问澄清，产出结构化需求后再调文生图。
+  - type: textarea
+    id: subject
+    attributes:
+      label: 题材 / 对象
+      description: 画什么？角色 / 场景 / 道具 / UI？
+    validations:
+      required: true
+  - type: textarea
+    id: style
+    attributes:
+      label: 风格要求
+      description: 美术风格、色调、参考图。可关联 knowledge/ 下的美术设定。
+    validations:
+      required: true
+  - type: textarea
+    id: composition
+    attributes:
+      label: 构图 / 细节要求
+  - type: input
+    id: knowledge-refs
+    attributes:
+      label: 关联设定 / 参考
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级
+      options:
+        - P0 紧急
+        - P1 高
+        - P2 中
+        - P3 低
+    validations:
+      required: true
